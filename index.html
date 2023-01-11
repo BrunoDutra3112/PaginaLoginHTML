@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>formulario de login</title>
+    <style>
+        body{
+            background-color: rgb(0, 143, 199);
+        }
+
+        form{
+            background-color: white;
+            padding: 45px;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%,-50%);
+            border-radius: 25px;
+        }
+
+        form h3{
+            text-align: center;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            color: rgb(0, 143, 199);
+            border-radius: 25px;
+        }
+
+        form input[type=email],
+        form input[type=password],
+        form input[type=text]{
+            border-radius: 25px;
+            width: 100%;
+            padding-left: 10px;
+            margin: 5px;
+            height: 30px;
+            border: 1px solid rgb(204, 204, 204);
+        }
+
+        form input[type=submit]{
+            border-radius: 25px;
+            text-align: center;
+            margin: 5px;
+            padding-left: 0px;
+            height: 35px;
+            width: 70%;
+            margin-left: 16%;
+            border: 1px black;
+            color: aliceblue;
+            background-color: rgb(0, 143, 199);
+        }
+
+    </style>
+    <script>
+        function mascara_cpf(){
+            var cpf = document.getElementById('cpf')
+            if(cpf.value.length == 3 || cpf.value.length == 7){
+                cpf.value += "."
+            }
+            else if(cpf.value.length == 11){
+                cpf.value += "-"
+            }
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <h3>Longin</h3>
+        <input type="email" id="email" name="email" placeholder="E-MAIL..." >
+        <input type="password" id="senha" placeholder="SENHA..." name="senha">
+        <input type="text" id="cpf" placeholder="CPF..." maxlength="14" autocomplete="off" onkeyup="mascara_cpf()">
+        <input type="submit" id="acao" value="enviar">
+          
+    </form>
+</body>
+</html>
